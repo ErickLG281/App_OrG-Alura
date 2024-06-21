@@ -4,6 +4,10 @@ const CampoTexto = (props) => {
  // console.log("Datos:", props);
   const placeholderModificador = `${props.placeholder}...`;
 
+  
+    //Destructuracion 
+    const { type = "text" } = props
+
   const manejarCambio = (e) => {
     //console.log("Cambio", e.target.value);
     props.actualizarValor(e.target.value);
@@ -17,6 +21,8 @@ const CampoTexto = (props) => {
         required={props.required}
         value={props.valor}
         onChange={manejarCambio}
+        type={type}
+
       />
     </div>
   );
