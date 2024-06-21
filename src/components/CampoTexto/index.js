@@ -1,15 +1,25 @@
 import "./CampoTexto.css";
 
 const CampoTexto = (props) => {
-    console.log("Datos:",props);
+ // console.log("Datos:", props);
+  const placeholderModificador = `${props.placeholder}...`;
 
-    const placeholderModificador =  `${props.placeholder}...`
-    return <div className="campo-texto">
-        <label >{props.titulo}</label>
-        <input placeholder={placeholderModificador} />
-        </div>
-}
+  const manejarCambio = (e) => {
+    //console.log("Cambio", e.target.value);
+    props.actualizarValor(e.target.value);
+  };
 
-
+  return (
+    <div className="campo-texto">
+      <label>{props.titulo}</label>
+      <input
+        placeholder={placeholderModificador}
+        required={props.required}
+        value={props.valor}
+        onChange={manejarCambio}
+      />
+    </div>
+  );
+};
 
 export default CampoTexto;
