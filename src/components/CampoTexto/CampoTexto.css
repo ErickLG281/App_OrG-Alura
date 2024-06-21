@@ -20,6 +20,7 @@
     padding: 30px 20px;
     outline-color: #6278f6;
     font-size: 16px;
+    box-sizing: border-box;
 
 }
 
